@@ -1,4 +1,4 @@
-<U>#### Capstone Project Analysis 
+#### Capstone Project Analysis <u/> 
 ### Introduction
 This project
 CustomerID    Unique identifier for each customer.                   
