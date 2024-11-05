@@ -65,26 +65,22 @@ create database customerdata
 SELECT Region, COUNT(CustomerID) AS TotalCustomers
 FROM dbo.[cust data]
 GROUP BY Region;
-
 -- 2. Most popular subscription type by the number of customers.--
 ```SQL
 SELECT Top (1) SubscriptionType, COUNT(CustomerID) AS MostPopularSubscriptionType
 FROM dbo.[cust data]
 GROUP BY SubscriptionType
 ORDER BY MostPopularSubscriptionType DESC
-
 - 3.--Customers who canceled their subscription within 6 months.-
 ```SQL
 SELECT CustomerName, SubscriptionStart, SubscriptionEnd
 FROM dbo.[cust data]
 WHERE Subscription_Duration <= 180
-
 4. --Average subscription duration for all customers.--
 ```SQL
 SELECT customername ,AVG(subscription_duration)as avgsubscription_duration
 from dbo.[cust data]
 group by customername
-
 -- 5. find customers with subscriptions longer than 12 months.--
 ```SQL
 SELECT CustomerID ,CustomerName, Subscription_Duration
@@ -113,18 +109,6 @@ SELECT
    FROM dbo.[cust data].
 
 ---
-
-
-
-
-
-
-
-   
-
-
-  
-
 
 ### *3. Subscription Trends Analysis*
 
@@ -212,4 +196,16 @@ order date: Date of transaction/order.
 Methodology
 Data Collection: The dataset used for this Analysis was provided by the Incubator hub.
 Data manipulation
+
+
+
+
+
+
+
+   
+
+
+  
+
 
