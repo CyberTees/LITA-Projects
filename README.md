@@ -53,6 +53,9 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 
 #### POWER BI
 
+![Customerdatadash](https://github.com/user-attachments/assets/ded95d1b-e494-490e-8d5c-477ada58ba39)
+
+![Customers Data Dash](https://github.com/user-attachments/assets/6377977f-ec9a-4a00-9923-79a63ac3d25c)
 
 
 ### *Exploratory Data Analysis*
