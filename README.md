@@ -53,11 +53,10 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 
 #### POWER BI
 
-![Screenshot (99)](https://github.com/user-attachments/assets/7394756d-98c6-465c-9662-16dd4266a39f)
 
-![powerbi dash](https://github.com/user-attachments/assets/4aa8fff6-6d30-476c-93fd-cba400182843)
 
 ### *Exploratory Data Analysis*
+
 
 This is an overview of query language used to generate dataset from the customer subscription data. 
 ```SQL
