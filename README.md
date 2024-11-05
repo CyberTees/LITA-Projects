@@ -28,7 +28,7 @@ The dataset includes the following fields:
 
 ---
 
-### *3. Analysis Approach*
+### *4. Analysis Approach*
 
 #### *Data Collection*
 The dataset for the analysis was provided by the incubator Hub,an orgainization built to train and support women in technology.The data was provided in excel workbook format for easy accessibility.
@@ -42,13 +42,82 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
      - Subscription Duration: Extracted the duration between subscription start date and subscription end data by using the add column button and finding the difference between the two 
        dates.
 ### *Tools Used*
-.Microsoft Excel,SQL POWERBI.
+- Microsoft Excel for data cleaning and analysis using pivot table.[Download Here](https://www.microsoft.com)
+- SQL For querying of data.
+- POWERBI for data visualization.
+
 ### *Dashboard And Tables Overview*
 #### EXCEL TABLE
 
 #### SQL TABLE
 
 #### POWER BI
+
+### *Exploratory Data Analysis*
+
+This is an overview of query language used to generate dataset from the customer subsription data. 
+
+```SQL
+create database customerdata
+
+-- 1. Total number of customers from each region.---
+```SQL
+SELECT Region, COUNT(CustomerID) AS TotalCustomers
+FROM dbo.[cust data]
+GROUP BY Region;
+
+-- 2. Most popular subscription type by the number of customers.--
+```SQL
+SELECT Top (1) SubscriptionType, COUNT(CustomerID) AS MostPopularSubscriptionType
+FROM dbo.[cust data]
+GROUP BY SubscriptionType
+ORDER BY MostPopularSubscriptionType DESC
+
+- 3.--Customers who canceled their subscription within 6 months.-
+```SQL
+SELECT CustomerName, SubscriptionStart, SubscriptionEnd
+FROM dbo.[cust data]
+WHERE Subscription_Duration <= 180
+
+4. --Average subscription duration for all customers.--
+```SQL
+SELECT customername ,AVG(subscription_duration)as avgsubscription_duration
+from dbo.[cust data]
+group by customername
+
+-- 5. find customers with subscriptions longer than 12 months.--
+```SQL
+SELECT CustomerID ,CustomerName, Subscription_Duration
+FROM dbo.[cust data]
+WHERE Subscription_Duration > 365;
+
+-- 6. Total revenue by subscription type.--
+```SQL
+SELECT SubscriptionType, SUM(Revenue) AS TotalRevenue
+FROM dbo.[cust data]
+GROUP BY SubscriptionType
+ORDER BY TotalRevenue DESC
+
+-- 7. Top 3 regions by subscription cancellations.
+```SQL
+SELECT  Top (3) Region, COUNT(Cancelation_Rate) AS Cancellations
+FROM dbo.[cust data] WHERE Canceled = 'TRUE'
+GROUP BY Region
+ORDER BY Cancellations DESC;
+
+8. find the total number of active and canceled subscriptions.
+```SQL
+SELECT
+    SUM(CASE WHEN Canceled = 'TRUE' THEN 1 ELSE 0 END) AS TotalCanceled,
+    SUM(CASE WHEN Canceled = 'FALSE' THEN 1 ELSE 0 END) AS TotalActive
+   FROM dbo.[cust data].
+
+---
+
+
+
+
+
 
 
    
