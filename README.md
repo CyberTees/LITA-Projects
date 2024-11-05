@@ -33,8 +33,25 @@ The dataset includes the following fields:
 #### *Data Collection*
 The dataset for the analysis was provided by the incubator Hub,an orgainization built to train and support women in technology.The data was provided in excel workbook format for easy accessibility.
 #### *Data manipulation*
+- *Data Cleaning*:
+   .Removed duplicates entry in excel and checkedfor speling errors and blank cells to ensure data quality.
+- *Data Transformation*
+   .Ensured all data fields were assigned correctly with the date field formatted to date formats.
+   . Created new columns:
+     - Cancelation Rate: Using conditional Formation in Power Bi a column cancelation rate was created to enable manipulation of the data contained in the canceled column.
+     - Subscription Duration: Extracted the duration between subscription start date and subscription end data by using the add column button and finding the difference between the two 
+       dates.
+### *Tools Used*
+.Microsoft Excel,SQL POWERBI.
+### *Dashboard And Tables Overview*
+#### EXCEL TABLE
 
-1. Data Cleaning
+#### SQL TABLE
+
+#### POWER BI
+
+
+   
 
 
   
