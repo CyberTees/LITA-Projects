@@ -55,54 +55,53 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 
 ### *Exploratory Data Analysis*
 
-This is an overview of query language used to generate dataset from the customer subsription data. 
+This is an overview of query language used to generate dataset from the customer subscription data. 
 
-```SQL
 create database customerdata
 
--- 1. Total number of customers from each region.---
-```SQL
+-1. Total number of customers from each region.
+
 SELECT Region, COUNT(CustomerID) AS TotalCustomers
 FROM dbo.[cust data]
 GROUP BY Region;
--- 2. Most popular subscription type by the number of customers.--
-```SQL
+-2. Most popular subscription type by the number of customers.
+
 SELECT Top (1) SubscriptionType, COUNT(CustomerID) AS MostPopularSubscriptionType
 FROM dbo.[cust data]
 GROUP BY SubscriptionType
 ORDER BY MostPopularSubscriptionType DESC
-- 3.--Customers who canceled their subscription within 6 months.-
-```SQL
+-3.Customers who canceled their subscription within 6 months.-
+
 SELECT CustomerName, SubscriptionStart, SubscriptionEnd
 FROM dbo.[cust data]
 WHERE Subscription_Duration <= 180
-4. --Average subscription duration for all customers.--
-```SQL
+-4. --Average subscription duration for all customers.
+
 SELECT customername ,AVG(subscription_duration)as avgsubscription_duration
 from dbo.[cust data]
 group by customername
--- 5. find customers with subscriptions longer than 12 months.--
-```SQL
+-5. find customers with subscriptions longer than 12 months.
+
 SELECT CustomerID ,CustomerName, Subscription_Duration
 FROM dbo.[cust data]
 WHERE Subscription_Duration > 365;
 
--- 6. Total revenue by subscription type.--
-```SQL
+-6. Total revenue by subscription type.--
+
 SELECT SubscriptionType, SUM(Revenue) AS TotalRevenue
 FROM dbo.[cust data]
 GROUP BY SubscriptionType
 ORDER BY TotalRevenue DESC
 
--- 7. Top 3 regions by subscription cancellations.
-```SQL
+-7. Top 3 regions by subscription cancellations.
+
 SELECT  Top (3) Region, COUNT(Cancelation_Rate) AS Cancellations
 FROM dbo.[cust data] WHERE Canceled = 'TRUE'
 GROUP BY Region
 ORDER BY Cancellations DESC;
 
-8. find the total number of active and canceled subscriptions.
-```SQL
+-8. find the total number of active and canceled subscriptions.
+
 SELECT
     SUM(CASE WHEN Canceled = 'TRUE' THEN 1 ELSE 0 END) AS TotalCanceled,
     SUM(CASE WHEN Canceled = 'FALSE' THEN 1 ELSE 0 END) AS TotalActive
@@ -110,92 +109,63 @@ SELECT
 
 ---
 
-### *3. Subscription Trends Analysis*
+---
 
-#### *3.1. Subscription Start Dates*
-- *Trends Over Time*: Identify seasonal trends in subscription starts. For example, GitHub might see spikes in new subscriptions around major product launches, academic seasons, or end-of-year budgeting cycles.
-- *Growth Rate*: Analyze the growth rate in subscription starts year over year, and if there are notable periods of acceleration or decline.
+### *5. Key Insights*
 
-#### *3.2. Subscription Duration*
-- *Average Subscription Duration*: Calculate the average duration of subscriptions, and identify any correlation between duration and customer profile (e.g., small businesses vs. large enterprises).
-- *Long-Term vs. Short-Term Subscriptions*: Determine the percentage of short-term (less than 6 months) versus long-term (12+ months) subscriptions.
-  
-#### *3.3. Region-Specific Trends*
-- *Regional Distribution*: Compare subscription rates and cancellation rates across different regions. Are there regions with higher cancellations? Which regions have the most consistent subscription renewals?
-- *Revenue per Region*: Assess revenue distribution across regions to identify high-performing markets.
-  
-#### *3.4. Cancellation Rates*
-- *Churn Patterns*: Examine which periods (monthly, quarterly) have higher cancellation rates, and if certain regions or customer demographics are more likely to churn.
-- *Factors Influencing Cancellations*: Analyze if cancellation rates correlate with subscription duration or specific regional patterns.
+#### *5.1. customers insight*
+- Customers with a total count 8488 in the east region subscribe to the basic package only.
+- Customers with a total count of 8466 from the south region are subscribed to the premium package
+- Customers from the north region with a total count of 8433 are subscribed to the basic package only
+- Customers from the west with a total count of 8420 are subscribed to the standard package.
+This shows that most populated subscription type is the basic package.It also suggests that the north and east region have a lower standard of living compared to the south and west region whose subscription type is the standard and premium package.
+
+#### *Sales Optimization*
+
+-The total revenue generated from all region is a sum of 67,540,175.
+-The East Region contributes a total of 16,958,783 to the sum total revenue.
+-The North Region contributes a total of 16,817,972 to the sum total revenue.
+-The South Region contributes a total of 16,899,064 to the sum total revenue.
+-The west Region contributes a total of 16,864,376 to the sum total revenue.
+
+#### *Revenue by Subscription Type*
+
+The basic subscribers contributes a total of 33,776,735 to the total revenue.
+The premium subscribers contributes a total of 16,899,064 to the total revenue.
+the standard subscribers contributes a total of 16,864,376 to the total revenue.
+
+This indicates that the region contributing the largest amount to the total revenue is the east region.The east region consist of only basic subscribers,also the subscribers contributing the  largest part to the total revnue originates from the basic subscription package.This suggest that the basic subsription is well structed to suits the basic customer base.
+
+#### *5.3. Subscription Duration & Retention*
+
+-33.39% of basic subscribers cancelled their subscription.
+-33.37% of premium subscribers cancelled their subscription.
+-33.24% of standard subscribers cancelled their subscription.
+
+ High cancellation rates could indicate dissatisfaction with the product, price sensitivity, or competitive pressure. It is important to Perform root cause analysis on why users are canceling subscriptions—this could include surveys, follow-up emails, or exit interviews with customers.
 
 ---
 
-### *4. Key Insights*
+### *6. Recommendations*
 
-#### *4.1. Subscription Growth*
-- *Insight*: If the data shows that subscriptions have steadily increased over the past year, GitHub is likely capturing more market share or benefiting from positive industry trends.
-- *Action*: Focus on retaining these new customers with more personalized engagement (e.g., onboarding programs, customer support).
-
-#### *4.2. Subscription Duration & Retention*
-- *Insight*: If subscription durations are short (less than 6 months), GitHub may face high churn rates or a lack of long-term engagement.
-- *Action*: Consider implementing loyalty programs, improving user experience, or offering incentives for longer commitments to increase retention.
-
-#### *4.3. Regional Opportunities*
-- *Insight*: If certain regions show significantly lower revenue or higher churn, these may require targeted campaigns or product improvements.
-- *Action*: Customize marketing strategies or customer support for regions with high churn. Additionally, explore partnerships or localized product features to boost engagement in underperforming areas.
-
-#### *4.4. Impact of Cancellations*
-- *Insight*: High cancellation rates could indicate dissatisfaction with the product, price sensitivity, or competitive pressure.
-- *Action*: Perform root cause analysis on why users are canceling subscriptions—this could include surveys, follow-up emails, or exit interviews with customers.
-
----
-
-### *5. Recommendations*
-
-#### *5.1. Improve Customer Retention*
+#### *6.1. Improve Customer Retention*
 - *Action*: Introduce targeted retention initiatives such as regular check-ins, proactive support, and loyalty incentives (e.g., discounts for long-term subscribers).
 - *Action*: Offer customized solutions or tailored pricing models based on customer needs, especially for larger organizations or long-term users.
 
-#### *5.2. Optimize Subscription Pricing*
-- *Action*: Evaluate if the pricing model is aligned with customer expectations in different regions. Introducing tiered pricing or additional features for higher-paying customers could increase retention and revenue.
+#### *6.2. Optimize Subscription Pricing*
+- *Action*: Evaluate the pricing model to aligned with customer expectations in different regions. Introducing additional features for higher-paying customers could increase retention and revenue.
   
-#### *5.3. Region-Specific Marketing*
-- *Action*: Invest in region-specific marketing strategies. For example, in high-churn regions, GitHub could increase localized advertising or provide educational resources to increase brand loyalty.
-  
-#### *5.4. Expand Enterprise Offerings*
-- *Action*: Explore the possibility of increasing enterprise-focused offerings, as these tend to have longer subscription durations and lower churn rates. Focus on adding features that appeal to business teams and large organizations.
+#### *6.3. Region-Specific Marketing*
+- *Action*: Invest in region-specific marketing strategies.
 
-#### *5.5. Address Cancellation Drivers*
+#### *6.4. Address Cancellation Drivers*
 - *Action*: Investigate the reasons behind cancellations (e.g., pricing, competition, product issues) and address them directly through product enhancements or customer engagement strategies.
   
 ---
 
-### *6. Conclusion*
+### *7. Conclusion*
 
-The dataset provides valuable insights into GitHub’s subscription trends, cancellations, and revenue generation. By focusing on improving customer retention, optimizing pricing, and addressing regional challenges, GitHub can better position itself for sustainable growth and profitability. Future analysis should continue to track subscription trends over time, with an emphasis on mitigating churn and improving long-term engagement.
-
----
-
-This is a structured framework for the report. You could dive deeper into the data analysis by creating visualizations such as trend graphs, heatmaps for regional data, and churn analysis tables to complement the insights. Would you like me to expand on any of these sections
-This project
-CustomerID    Unique identifier for each customer.                   
-OrderID     -  Unique identifier for each order.                      
-UnitPrice    - Price per unit of the product sold                  
-SalesPrice   - Total price received for the order (SalesPrice = UnitPrice * Quantity) 
-Quantity     - Number of units sold per order                  
-Region       - Geographic region where the customer is located     
-order date: Date of transaction/order.
-
-## Basic Statistics of Dataset
-* Total Revenue/sales:
-* Total Unit Price:
-* Total Quantity Sold:
-* Number of product Category
-* Number of Region
-
-Methodology
-Data Collection: The dataset used for this Analysis was provided by the Incubator hub.
-Data manipulation
+The dataset provides valuable insights into Customers data subscription trends, cancellations, and revenue generation. By focusing on improving customer retention, optimizing pricing, and addressing regional challenges, GitHub can better position itself for sustainable growth and profitability. Future analysis should continue to track subscription trends over time, with an emphasis on mitigating churn and improving long-term engagement.
 
 
 
