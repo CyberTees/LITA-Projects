@@ -172,7 +172,7 @@ This indicates that the region contributing the largest amount to the total reve
 
 ### *7. Conclusion*
 
-The dataset provides valuable insights into Customers data subscription trends, cancellations, and revenue generation. By focusing on improving customer retention, optimizing pricing, and addressing regional challenges, GitHub can better position itself for sustainable growth and profitability. Future analysis should continue to track subscription trends over time, with an emphasis on mitigating churn and improving long-term engagement.
+The dataset provides valuable insights into Customers data subscription trends, cancellations, and revenue generation. By focusing on improving customer retention, optimizing pricing, and addressing regional challenges, the service provider can also  better position itself for sustainable growth and profitability. Future analysis should continue to track subscription trends over time, with an emphasis on mitigating churn and improving long-term engagement.
 
 
 
