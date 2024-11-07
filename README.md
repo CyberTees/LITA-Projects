@@ -150,7 +150,7 @@ This shows that most populated subscription type is the basic package.It also su
 
 #### *Sales Optimization*
 
-
+![pivot region](https://github.com/user-attachments/assets/528ae170-a6a8-4586-b10d-de5ae57382e7)
 
 -The total revenue generated from all region is a sum of 67,540,175.
 -The East Region contributes a total of 16,958,783 to the sum total revenue.
