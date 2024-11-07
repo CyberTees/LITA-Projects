@@ -134,7 +134,7 @@ SELECT
 
 ### Key Insights
 
-#### *5.1. customers insight*
+#### *customers insight*
 
 - Customers with a total count 8488 in the east region subscribe to the basic package only.
 - Customers with a total count of 8466 from the south region are subscribed to the premium package
