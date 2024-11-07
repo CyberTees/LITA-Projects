@@ -61,7 +61,9 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 - SQL For querying of data.
 - POWERBI for data visualization.
 
-### *Dashboard And Tables Overview*
+---
+
+### Dashboard And Tables Overview
 
 #### EXCEL TABLE
 
@@ -73,6 +75,7 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 
 ![Customers Data Dash](https://github.com/user-attachments/assets/6377977f-ec9a-4a00-9923-79a63ac3d25c)
 
+---
 
 ### Exploratory Data Analysis
 
