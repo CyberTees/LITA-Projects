@@ -161,6 +161,8 @@ This shows that most populated subscription type is the basic package.It also su
 
 #### *Revenue by Subscription Type*
 
+![sub type](https://github.com/user-attachments/assets/39eba708-7865-44d7-9c73-32af6aa84768)
+
 The basic subscribers contributes a total of 33,776,735 to the total revenue.
 The premium subscribers contributes a total of 16,899,064 to the total revenue.
 the standard subscribers contributes a total of 16,864,376 to the total revenue.
