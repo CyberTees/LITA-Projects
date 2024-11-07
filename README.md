@@ -169,7 +169,7 @@ the standard subscribers contributes a total of 16,864,376 to the total revenue.
 
 This indicates that the region contributing the largest amount to the total revenue is the east region.The east region consist of only basic subscribers,also the subscribers contributing the  largest part to the total revnue originates from the basic subscription package.This suggest that the basic subsription is well structed to suits the basic customer base.
 
-#### Subscription Duration & Retention*
+#### *Subscription Duration & Retention*
 
 -33.39% of basic subscribers cancelled their subscription.
 -33.37% of premium subscribers cancelled their subscription.
