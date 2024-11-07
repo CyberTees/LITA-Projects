@@ -70,10 +70,11 @@ The dataset for the analysis was provided by the incubator Hub,an orgainization 
 #### SQL TABLE
 
 #### POWER BI
+![customerdashb](https://github.com/user-attachments/assets/86868165-17db-4398-81e4-a9d9f048a07b)
 
-![Customerdatadash](https://github.com/user-attachments/assets/ded95d1b-e494-490e-8d5c-477ada58ba39)
 
-![Customers Data Dash](https://github.com/user-attachments/assets/6377977f-ec9a-4a00-9923-79a63ac3d25c)
+![Customers Dasha](https://github.com/user-attachments/assets/5b11a999-79ed-487d-8e1e-8cfb91c36180)
+
 
 ---
 
