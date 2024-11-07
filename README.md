@@ -150,15 +150,14 @@ SELECT
 This shows that most populated subscription type is the basic package.It also suggests that the north and east region have a lower standard of living compared to the south and west region whose subscription type is the standard and premium package.
 
 #### *Sales Optimization*
+
 ![region pivot](https://github.com/user-attachments/assets/5132eaf7-e879-4d6d-bde3-355f136f31c2)
 
-
-
--The total revenue generated from all region is a sum of 67,540,175.
--The East Region contributes a total of 16,958,783 to the sum total revenue.
--The North Region contributes a total of 16,817,972 to the sum total revenue.
--The South Region contributes a total of 16,899,064 to the sum total revenue.
--The west Region contributes a total of 16,864,376 to the sum total revenue.
+- The total revenue generated from all region is a sum of 67,540,175.
+- The East Region contributes a total of 16,958,783 to the sum total revenue.
+- The North Region contributes a total of 16,817,972 to the sum total revenue.
+- The South Region contributes a total of 16,899,064 to the sum total revenue.
+- The west Region contributes a total of 16,864,376 to the sum total revenue.
 
 #### *Revenue by Subscription Type*
 
