@@ -139,8 +139,9 @@ SELECT
 
 #### *customers insight*
 
-![pivotcustomer](https://github.com/user-attachments/assets/ea151262-2c90-4153-bc16-d30e13faeca2)
 
+
+![count pivot](https://github.com/user-attachments/assets/cb10bac1-7fb1-46e3-8e54-33977e4ed199)
 
 - Customers with a total count of 8488 in the east region subscribe to the basic package only.
 - Customers with a total count of 8466 from the south region are subscribed to the premium package only.
@@ -149,8 +150,9 @@ SELECT
 This shows that most populated subscription type is the basic package.It also suggests that the north and east region have a lower standard of living compared to the south and west region whose subscription type is the standard and premium package.
 
 #### *Sales Optimization*
+![region pivot](https://github.com/user-attachments/assets/5132eaf7-e879-4d6d-bde3-355f136f31c2)
 
-![pivot region](https://github.com/user-attachments/assets/528ae170-a6a8-4586-b10d-de5ae57382e7)
+
 
 -The total revenue generated from all region is a sum of 67,540,175.
 -The East Region contributes a total of 16,958,783 to the sum total revenue.
